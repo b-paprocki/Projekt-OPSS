@@ -39,7 +39,7 @@ body{
 #game-box{
     width: 1000px;
     height: 480px;
-    background-color: white;
+    /* background-color: white; */
     margin: 25px 50px 25px 50px;
 }
 

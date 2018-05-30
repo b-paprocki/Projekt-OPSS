@@ -1,2 +1,2 @@
 # Projekt-OPSS
-Projekt z zajęć OPSS
+Projekt zaliczeniowy na zajęcia OPSS.

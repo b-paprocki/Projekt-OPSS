@@ -7,8 +7,15 @@
     </head>
     <body>
         <div class="container">
-            <button id="start-btn" onclick="start()">Nowa gra!</button>
-            <div id="game-box"></div>
+            <button id="start-btn" onclick="newgame()">Nowa gra!</button>
+            <div class="score-resources-box">
+                <div class="score-box">Twój wynik:<div id="score">2300</div></div>
+                <div class="resources-box">Zasoby:<div id="resources">500</div>
+                <div style="clear: both;"></div></div>
+            </div>
+            <div id="game-box">
+                
+            </div>
         </div>
         <script src="script.js"></script>
     </body>

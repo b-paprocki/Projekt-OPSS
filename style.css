@@ -15,7 +15,7 @@ body{
 #start-btn{
     width: 220px;
     height: 50px;
-    margin: 35px 450px 0;
+    margin: 25px 450px 0;
     padding: 0;
     background-color: #4CAF50;
     border: 3px solid rgba(0, 0, 0, 0.2);
@@ -38,7 +38,7 @@ body{
 
 #game-box{
     width: 1000px;
-    height: 480px;
+    height: 420px;
     /* background-color: white; */
     margin: 25px 50px 25px 50px;
 }
@@ -47,3 +47,22 @@ body{
     outline: none;
 }
 
+.score-resources-box{
+    width: 1000px;
+    height: 70px;
+    margin: 10px 50px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.score-box{
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+.resources-box{
+    height: 100%;
+    width: 50%;
+    float: left;
+}

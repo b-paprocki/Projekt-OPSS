@@ -2,19 +2,24 @@
 <html lang="pl">
     <head>
         <meta charset="utf-8">
-        <title>Gra</title>
+        <title>Symulator studenta informatyki</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body onload="getStarted()">
         <div class="container">
+            <h1>Symulator studenta informatyki</h1>
             <button id="start-btn" onclick="newgame()">Nowa gra!</button>
-            <div class="score-resources-box">
-                <div class="score-box">Twój wynik:<div id="score">2300</div></div>
-                <div class="resources-box">Zasoby:<div id="resources">500</div>
-                <div style="clear: both;"></div></div>
+            <div class="score-box">
+                <div class="resource-box">Kasa:<br><span id="money">0</span> $</div>
+                <div class="resource-box">Kasy na sekundę:<br><span id="moneyPerSec">0</span> $</div>
+                <div class="resource-box">Nauka:<br><span id="sci">0</span></div>
+                <div class="resource-box">Polot:<br><span id="polot">0</span></div>
+                <div style="clear: both;"></div>
             </div>
             <div id="game-box">
-                
+                <button onclick="addMoney()">Idź do pracy<br>+1$</button>
+                <button onclick="learn()">Ucz się<br>+1 nauki</button>
+                <button onclick="beer()">Idź na piwo z kolegami<br>-30$<br>+5 polotu</button>
             </div>
         </div>
         <script src="script.js"></script>

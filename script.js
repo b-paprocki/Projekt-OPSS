@@ -4,6 +4,9 @@ var moneyPerSec = 0;
 var science = 0;
 var polot = 0;
 
+//----------------------Zwiększanie ilości nauki
+var learnAmount = 1;
+
 //----------------------Funkcje
 function addMoney(){
     money = money + 1;
@@ -11,7 +14,7 @@ function addMoney(){
 }
 
 function learn(){
-    science = science + 1;
+    science = science + learnAmount;
     document.getElementById("sci").innerHTML = science;
 }
 
@@ -22,6 +25,13 @@ function beer(){
         money = money - 30;
         document.getElementById("money").innerHTML = money;
     }
+}
+
+function goLearn(){
+    polot = polot - 15;
+    document.getElementById("polot").innerHTML = polot;
+    learnAmount = learnAmount +1;
+    document.getElementById("learnAmount").innerHTML = learnAmount;
 }
 
 //----------------------Informacja na start

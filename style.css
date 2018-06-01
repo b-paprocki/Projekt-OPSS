@@ -1,6 +1,7 @@
 body{
     /* Background pattern from Toptal Subtle Patterns */
     background: url(img/footer_lodyas.png);
+    font-family: 'Roboto', sans-serif;
 }
 
 .container{
@@ -45,7 +46,6 @@ h1{
 #game-box{
     width: 1000px;
     height: 420px;
-    /* background-color: white; */
     margin: 10px 50px 20px 50px;
 }
 

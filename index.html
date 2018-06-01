@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Symulator studenta informatyki</title>
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&amp;subset=latin-ext" rel="stylesheet"> <!--Google Fonts-->
     </head>
     <body onload="getStarted()">
         <div class="container">
@@ -18,8 +19,9 @@
             </div>
             <div id="game-box">
                 <button onclick="addMoney()">Idź do pracy<br>+1$</button>
-                <button onclick="learn()">Ucz się<br>+1 nauki</button>
+                <button onclick="learn()">Ucz się<br>+<span id="learnAmount">1</span> nauki</button>
                 <button onclick="beer()">Idź na piwo z kolegami<br>-30$<br>+5 polotu</button>
+                <button onclick="goLearn()">Idź na wykład<br>-15 polotu<br>+1 do nauki za każdy klik</button>
             </div>
         </div>
         <script src="script.js"></script>

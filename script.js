@@ -4,7 +4,7 @@ var moneyPerSec = 0;
 var science = 0;
 var polot = 0;
 
-//----------------------Zwiększanie ilości nauki
+//----------------------Ilość nauki na buttonie
 var learnAmount = 1;
 
 //----------------------Funkcje
@@ -32,6 +32,18 @@ function goLearn(){
     document.getElementById("polot").innerHTML = polot;
     learnAmount = learnAmount +1;
     document.getElementById("learnAmount").innerHTML = learnAmount;
+}
+
+function miner(){ //poprawić kiedy posiadasz >1 koparkę
+    if(money >= 10000){
+        money = money - 10000;
+        document.getElementById("moneyPerSec").innerHTML = 10;
+        document.getElementById("money").innerHTML = money;
+        window.setInterval(function(){
+            money = money + 10;
+            document.getElementById("money").innerHTML = money;
+        }, 1000);
+    }
 }
 
 //----------------------Informacja na start

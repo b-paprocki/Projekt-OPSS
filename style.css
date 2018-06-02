@@ -66,3 +66,12 @@ h1{
     width: 25%;
     float: left;
 }
+
+/*Przyciski*/
+.stdBtn{
+    background-color: green;
+}
+
+.stdBtn-disabled{
+    background-color: red;
+}

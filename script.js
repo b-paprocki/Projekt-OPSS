@@ -4,8 +4,14 @@ var moneyPerSec = 0;
 var science = 0;
 var polot = 0;
 
-//----------------------Ilość nauki na buttonie
+//----------------------Zmienne na zwycięstwo
+var house = false;
+var girl = false;
+var studies = false;
+
+//----------------------Zmienne ilości
 var learnAmount = 1;
+var haveMiner = false;
 
 //----------------------Funkcje
 function addMoney(){
@@ -35,14 +41,25 @@ function goLearn(){
 }
 
 function miner(){ //poprawić kiedy posiadasz >1 koparkę
-    if(money >= 10000){
+    if(money >= 10000 && haveMiner == false){
+        haveMiner = true;
         money = money - 10000;
+        document.getElementById("miner-btn").className = "stdBtn-disabled";
         document.getElementById("moneyPerSec").innerHTML = 10;
         document.getElementById("money").innerHTML = money;
         window.setInterval(function(){
             money = money + 10;
             document.getElementById("money").innerHTML = money;
         }, 1000);
+    }
+}
+
+function buyHouse(){
+    if (money >= 1000000 && house == false){
+        money = money - 1000000;
+        house = true;
+        document.getElementById("money").innerHTML = money;
+        document.getElementById("buyHouse-btn").className = "stdBtn-disabled";
     }
 }
 

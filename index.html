@@ -18,11 +18,12 @@
                 <div style="clear: both;"></div>
             </div>
             <div id="game-box">
-                <button onclick="addMoney()">Idź do pracy<br>+1$</button>
-                <button onclick="learn()">Ucz się<br>+<span id="learnAmount">1</span> nauki</button>
-                <button onclick="beer()">Idź na piwo z kolegami<br>-30$<br>+5 polotu</button>
-                <button onclick="goLearn()">Idź na wykład<br>-15 polotu<br>+1 do nauki za każdy klik</button>
-                <button onclick="miner()">Kup koparkę kryptowalut<br>-10000$<br>+10$ na sekundę</button>
+                <button class="stdBtn" onclick="addMoney()">Idź do pracy<br>+1$</button>
+                <button class="stdBtn" onclick="learn()">Ucz się<br>+<span id="learnAmount">1</span> nauki</button>
+                <button class="stdBtn" onclick="beer()">Idź na piwo z kolegami<br>-30$<br>+5 polotu</button>
+                <button class="stdBtn" onclick="goLearn()">Idź na wykład<br>-15 polotu<br>+1 do nauki za każdy klik</button>
+                <button class="stdBtn" id="miner-btn" onclick="miner()">Kup koparkę kryptowalut<br>-10000$<br>+10$ na sekundę</button>
+                <button class="stdBtn" id="buyHouse-btn" onclick="buyHouse()">Kup mieszkanie<br>-1000000$</button>
             </div>
         </div>
         <script src="script.js"></script>

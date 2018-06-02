@@ -4,6 +4,14 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+/* No outline */
+.noOutline:active{
+    outline: none;
+}
+.noOutline:focus{
+    outline: none;
+}
+
 .container{
     width: 1100px;
     min-height: 650px;
@@ -19,7 +27,7 @@ h1{
     text-align: center;
 }
 
-#start-btn{ /* przerzucić transition na zmianę koloru do innej klasy*/
+#start-btn{
     width: 220px;
     height: 50px;
     margin: 15px 450px 0;
@@ -30,27 +38,22 @@ h1{
     font-size: 20px;
     color: #fff;
     box-shadow: 2px 2px 10px black;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 #start-btn:active{
     border: 3px solid rgba(0, 0, 0, 0.4);
-    outline: none;
 }
 
 #start-btn:hover{
     background-color: #4cafab;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 #game-box{
     width: 1000px;
     height: 420px;
     margin: 10px 50px 20px 50px;
-}
-
-#start-btn:focus{
-    outline: none;
 }
 
 .score-box{
@@ -69,9 +72,36 @@ h1{
 
 /*Przyciski*/
 .stdBtn{
-    background-color: green;
+    background-color: #008CBA;
+    width: 190px;
+    height: 60px;
+    float: left;
+    margin: 5px;
+    padding: 0;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    box-shadow: 2px 2px 10px black;
+    transition: 0.2s;
+}
+
+.stdBtn:hover{
+    background-color: #fff;
+    transition: 0.2s;
+}
+
+.stdBtn:active{
+    border: 3px solid rgba(0, 0, 0, 0.6);
 }
 
 .stdBtn-disabled{
     background-color: red;
+    width: 190px;
+    height: 60px;
+    float: left;
+    margin: 5px;
+    padding: 0;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    box-shadow: 2px 2px 10px black;
+    opacity: 0.65;
 }

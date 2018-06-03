@@ -65,7 +65,7 @@ function buyHouse(){
 
 //----------------------Informacja na start
 function getStarted(){
-    alert("Witaj w symulatorze studenta informatyki!\nW tej grze możesz wcielić się w typowego studenta. Twoim celem jest ukończenie studiów w jak najkrótszym czasie, wyprowadzenie się od rodziców i znalezienie dziewczyny. Zadanie nie jest łatwe, bo jesteś w końcu studentem informatyki.\n\nPowodzenia!");
+    alert("Witaj w symulatorze studenta informatyki!\nW tej grze możesz wcielić się w typowego studenta. Twoim celem jest ukończenie studiów w jak najkrótszym czasie, wyprowadzenie się od rodziców i znalezienie dziewczyny. Zadanie nie będzie łatwe, bo jesteś w końcu studentem informatyki.\n\nPowodzenia!");
 }
 
 //----------------------Nowa gra

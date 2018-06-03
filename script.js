@@ -12,6 +12,7 @@ var studies = false;
 //----------------------Zmienne ilości
 var learnAmount = 1;
 var haveMiner = false;
+var minerLevel = 1;
 
 //----------------------Funkcje
 function addMoney(){
@@ -40,17 +41,26 @@ function goLearn(){
     document.getElementById("learnAmount").innerHTML = learnAmount;
 }
 
-function miner(){ //poprawić kiedy posiadasz >1 koparkę
+function miner(){
     if(money >= 10000 && haveMiner == false){
         haveMiner = true;
         money = money - 10000;
         document.getElementById("miner-btn").className = "stdBtn-disabled";
-        document.getElementById("moneyPerSec").innerHTML = 10;
+        document.getElementById("minerUpgrade-btn").className = "stdBtn";
+        document.getElementById("moneyPerSec").innerHTML = 10*minerLevel;
         document.getElementById("money").innerHTML = money;
         window.setInterval(function(){
-            money = money + 10;
+            money = money + (10*minerLevel);
             document.getElementById("money").innerHTML = money;
         }, 1000);
+    }
+}
+
+function minerUpgrade(){
+    if(money >= 5000 && haveMiner == true){
+        money = money - 5000;
+        minerLevel++;
+        document.getElementById("moneyPerSec").innerHTML = 10*minerLevel;
     }
 }
 

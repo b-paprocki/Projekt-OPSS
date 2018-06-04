@@ -1,7 +1,7 @@
 //----------------------Główne zmienne
 var money = 0;
 var moneyPerSec = 0;
-var science = 0;
+var science = 1000000000;
 var polot = 0;
 
 //----------------------Zmienne na zwycięstwo
@@ -34,6 +34,15 @@ function beer(){
         document.getElementById("polot").innerHTML = polot;
         money = money - 30;
         document.getElementById("money").innerHTML = money;
+    }
+}
+
+function party(){
+    if (money >= 150){
+        money = money - 150;
+        document.getElementById("money").innerHTML = money;
+        polot = polot + 15;
+        document.getElementById("polot").innerHTML = polot;
     }
 }
 
@@ -78,20 +87,33 @@ function buyHouse(){
 
 function practice(){
     if (science >= practiceCost){
-        moneyPerClick++;
-        document.getElementById("moneyPerClick").innerHTML = moneyPerClick;
         practiceCost = practiceCost + 500;
         document.getElementById("practiceCost").innerHTML = practiceCost;
         practiceLevel++;
-    }
-    if (practiceLevel >5){ // zmiana nazwy zawodu
-        document.getElementById("practiceName").innerHTML = "Zdobywaj dośw. jako Junior Developer"; //zwiększyć moneyPerClick
-    }
-    if (practiceLevel >10){
-        document.getElementById("practiceName").innerHTML = "Zdobywaj dośw. jako Mid-level Developer";
-    }
-    if (practiceLevel >20){
-        document.getElementById("practiceName").innerHTML = "Zdobywaj dośw. jako Senior Developer";
+        if (practiceLevel <= 5){
+            moneyPerClick++;
+        }
+        if (practiceLevel >5){
+            document.getElementById("practiceName").innerHTML = "Zdobywaj dośw. jako Junior Developer";
+            document.getElementById("practiceToMoney").innerHTML = "3";
+            moneyPerClick = moneyPerClick + 3;
+        }
+        if (practiceLevel >10){
+            document.getElementById("practiceName").innerHTML = "Zdobywaj dośw. jako Mid-level Developer";
+            document.getElementById("practiceToMoney").innerHTML = "5";
+            moneyPerClick = moneyPerClick + 5;
+        }
+        if (practiceLevel >20){
+            document.getElementById("practiceName").innerHTML = "Zdobywaj dośw. jako Senior Developer";
+            document.getElementById("practiceToMoney").innerHTML = "10";
+            moneyPerClick = moneyPerClick + 10;
+        }
+        if (practiceLevel == 25){
+            moneyPerClick = moneyPerClick + 109; // +300$ z praktyk
+            document.getElementById("practice-btn").innerHTML = "Zdobywaj dośw. jako Senior Developer<br><b>MAX</b>";
+            document.getElementById("practice-btn").className = "stdBtn-disabled";
+        }
+        document.getElementById("moneyPerClick").innerHTML = moneyPerClick;
     }
 }
 

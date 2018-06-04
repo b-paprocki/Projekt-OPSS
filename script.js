@@ -1,7 +1,7 @@
 //----------------------Główne zmienne
 var money = 0;
 var moneyPerSec = 0;
-var science = 1000000000;
+var science = 0;
 var polot = 0;
 
 //----------------------Zmienne na zwycięstwo
@@ -57,8 +57,8 @@ function miner(){
     if(money >= 10000 && haveMiner == false){
         haveMiner = true;
         money = money - 10000;
-        document.getElementById("miner-btn").className = "stdBtn-disabled";
-        document.getElementById("minerUpgrade-btn").className = "stdBtn";
+        document.getElementById("miner-btn").style.display = "none" // zamiana przycisku z kupna na ulepszenie
+        document.getElementById("minerUpgrade-btn").style.display = "block";
         document.getElementById("moneyPerSec").innerHTML = 10*minerLevel;
         document.getElementById("money").innerHTML = money;
         window.setInterval(function(){
@@ -68,7 +68,7 @@ function miner(){
     }
 }
 
-function minerUpgrade(){
+function minerUpgrade(){ // ograniczyć ulepszanie, zwiększyć efektywność
     if(money >= 5000 && haveMiner == true){
         money = money - 5000;
         minerLevel++;

@@ -13,10 +13,13 @@ var studies = false;
 var learnAmount = 1;
 var haveMiner = false;
 var minerLevel = 1;
+var moneyPerClick = 1;
+var practiceCost = 500;
+var practiceLevel = 0;
 
 //----------------------Funkcje
 function addMoney(){
-    money = money + 1;
+    money = money + moneyPerClick;
     document.getElementById("money").innerHTML = money;
 }
 
@@ -70,6 +73,25 @@ function buyHouse(){
         house = true;
         document.getElementById("money").innerHTML = money;
         document.getElementById("buyHouse-btn").className = "stdBtn-disabled";
+    }
+}
+
+function practice(){
+    if (science >= practiceCost){
+        moneyPerClick++;
+        document.getElementById("moneyPerClick").innerHTML = moneyPerClick;
+        practiceCost = practiceCost + 500;
+        document.getElementById("practiceCost").innerHTML = practiceCost;
+        practiceLevel++;
+    }
+    if (practiceLevel >5){ // zmiana nazwy zawodu
+        document.getElementById("practiceName").innerHTML = "Zdobywaj dośw. jako Junior Developer"; //zwiększyć moneyPerClick
+    }
+    if (practiceLevel >10){
+        document.getElementById("practiceName").innerHTML = "Zdobywaj dośw. jako Mid-level Developer";
+    }
+    if (practiceLevel >20){
+        document.getElementById("practiceName").innerHTML = "Zdobywaj dośw. jako Senior Developer";
     }
 }
 

@@ -4,14 +4,14 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-/* No outline */
+/* No outline
 .noOutline:active{
     outline: none;
 }
 .noOutline:focus{
     outline: none;
 }
-
+*/
 .container{
     width: 1100px;
     min-height: 650px;
@@ -43,11 +43,16 @@ h1{
 
 #start-btn:active{
     border: 3px solid rgba(0, 0, 0, 0.4);
+    outline: none;
 }
 
 #start-btn:hover{
     background-color: #4cafab;
     transition: 0.4s;
+}
+
+#start-btn:focus{
+    outline: none;
 }
 
 #game-box{
@@ -91,6 +96,11 @@ h1{
 
 .stdBtn:active{
     border: 3px solid rgba(0, 0, 0, 0.6);
+    outline: none;
+}
+
+.stdBtn:focus{
+    outline: none;
 }
 
 .stdBtn-disabled{
@@ -106,4 +116,12 @@ h1{
     opacity: 0.65;
     outline: none;
     transition: 1s;
+}
+
+.stdBtn-disabled:active{
+    outline: none;
+}
+
+.stdBtn-disabled:focus{
+    outline: none;
 }

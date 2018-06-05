@@ -81,7 +81,7 @@ function buyHouse(){
         money = money - 1000000;
         house = true;
         document.getElementById("money").innerHTML = money;
-        document.getElementById("buyHouse-btn").className = "stdBtn-disabled";
+        document.getElementById("buyHouse-btn").className = "stdBtn-max";
     }
 }
 
@@ -111,11 +111,84 @@ function practice(){
         if (practiceLevel == 25){
             moneyPerClick = moneyPerClick + 109; // +300$ z praktyk
             document.getElementById("practice-btn").innerHTML = "Zdobywaj dośw. jako Senior Developer<br><b>MAX</b>";
-            document.getElementById("practice-btn").className = "stdBtn-disabled";
+           // document.getElementById("practice-btn").className = "stdBtn-max";
         }
         document.getElementById("moneyPerClick").innerHTML = moneyPerClick;
     }
 }
+
+//odliczanie
+/*
+var z=60;
+function odliczanie() {
+
+    if(z>0) {
+        z=z-1;
+        document.getElementById('test').innerHTML = z
+    } else {
+        val = window.clearInterval(val);
+    }
+} 
+val = setInterval('odliczanie()','1000');
+*/
+
+//----------------------Zmiana koloru przycisków
+
+function check(){
+    /* BEER */
+    if(money < 30){
+        document.getElementById("beer-btn").className = "stdBtn-disabled";
+    }
+    else{
+        document.getElementById("beer-btn").className = "stdBtn";
+    }
+    
+    /* BUY MINER */
+    if(money < 10000){
+        document.getElementById("miner-btn").className = "stdBtn-disabled";
+    }
+    else{
+        document.getElementById("miner-btn").className = "stdBtn";
+    }
+    /* UPGRADE MINER */
+    if(money < 5000){
+        document.getElementById("miner-btn").className = "stdBtn-disabled";
+    }
+    else{
+        document.getElementById("minerUpgrade-btn").className = "stdBtn";
+    }
+    
+    /* BUY HOUSE */
+    if(money < 1000000){
+        document.getElementById("buyHouse-btn").className = "stdBtn-disabled";
+    }
+    else if(house == true){
+        document.getElementById("buyHouse-btn").className = "stdBtn-max";
+    }
+    else{
+        document.getElementById("buyHouse-btn").className = "stdBtn";
+    }
+    
+    /* PARTY */
+    if(money < 150){
+        document.getElementById("party-btn").className = "stdBtn-disabled";
+    }
+    else{
+        document.getElementById("party-btn").className = "stdBtn";
+    }
+    
+    /* PRACTICE */
+    if(science < practiceCost){
+        document.getElementById("practice-btn").className = "stdBtn-disabled";
+    }
+    else if (practiceLevel == 25){
+        document.getElementById("practice-btn").className = "stdBtn-max";
+    }
+    else{
+        document.getElementById("practice-btn").className = "stdBtn";
+    }
+}
+window.setInterval('check()','100');
 
 //----------------------Informacja na start
 function getStarted(){

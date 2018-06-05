@@ -20,13 +20,13 @@
             <div id="game-box">
                 <button class="stdBtn" onclick="addMoney()">Idź do pracy<br>+<span id="moneyPerClick">1</span>$</button>
                 <button class="stdBtn" onclick="learn()">Ucz się<br>+<span id="learnAmount">1</span> nauki</button>
-                <button class="stdBtn" onclick="beer()">Idź na piwo z kolegami<br>-30$<br>+5 polotu</button>
-                <button class="stdBtn" onclick="goLearn()">Idź na wykład<br>-15 polotu<br>+1 do nauki za każdy klik</button>
+                <button class="stdBtn" id="beer-btn" onclick="beer()">Idź na piwo z kolegami<br>-30$<br>+5 polotu</button>
+                <button class="stdBtn" id="goLearn-btn" onclick="goLearn()">Idź na wykład<br>-15 polotu<br>+1 do nauki za każdy klik</button>
                 <button class="stdBtn" id="miner-btn" onclick="miner()">Kup koparkę kryptowalut<br>-10 000$<br>+10$/s</button> <!-- miner nad minerUpgrade! -->
                 <button class="stdBtn" id="minerUpgrade-btn" onclick="minerUpgrade()" style="display: none;">Ulepsz koparkę<br>-5 000$<br>Dodatkowe +10$/s</button>
                 <button class="stdBtn" id="buyHouse-btn" onclick="buyHouse()">Kup mieszkanie<br>-1 000 000$</button>
                 <button class="stdBtn" id="practice-btn" onclick="practice()"><span id="practiceName">Idź na bezpłatne praktyki</span><br>Wymagana nauka: <span id="practiceCost">500</span><br>+<span id="practiceToMoney">1</span>$ za każdy klik</button>
-                <button class="stdBtn" onclick="party()">Idź na imprezę do klubu<br>-150$<br>+15 polotu</button>
+                <button class="stdBtn" id="party-btn" onclick="party()">Idź na imprezę do klubu<br>-150$<br>+15 polotu</button>
                 <div style="clear: both;"></div>
             </div>
         </div>

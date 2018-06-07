@@ -24,7 +24,7 @@ function addMoney(){
 }
 
 function learn(){
-    science = science + learnAmount;
+    science = science + learnAmount + Math.ceil(learnBonus);
     document.getElementById("sci").innerHTML = science;
 }
 
@@ -111,29 +111,30 @@ function practice(){
         if (practiceLevel == 25){
             moneyPerClick = moneyPerClick + 109; // +300$ z praktyk
             document.getElementById("practice-btn").innerHTML = "Zdobywaj dośw. jako Senior Developer<br><b>MAX</b>";
-           // document.getElementById("practice-btn").className = "stdBtn-max";
+           // document.getElementById("practice-btn").className = "stdBtn-max"; przeniesiono do funkcji check()
         }
         document.getElementById("moneyPerClick").innerHTML = moneyPerClick;
     }
 }
 
-//odliczanie
-/*
-var z=60;
-function odliczanie() {
+//----------------------Events
+var date = new Date(); //data pobierana z systemu
+var month = date.getMonth() + 1; //1-sty, 2-lut, 3-mar ...
+var learnBonus = 0;
+if(month == 2 || month == 6){ // dlaczego nie działa negacja?????
+    document.getElementById("eventSesja-btn").style.display = "block";
+}
+else{
+    document.getElementById("eventSesja-btn").style.display = "none";
+}
+function eventSesja(){
+    document.getElementById("eventSesja-btn").className = "stdBtn-max"; // zmienić klasę
+    window.setInterval(function(){
+        learnBonus = learnAmount * 0.3;
+    },1000);
+}
 
-    if(z>0) {
-        z=z-1;
-        document.getElementById('test').innerHTML = z
-    } else {
-        val = window.clearInterval(val);
-    }
-} 
-val = setInterval('odliczanie()','1000');
-*/
-
-//----------------------Zmiana koloru przycisków
-
+//----------------------Kolorowanie przycisków
 function check(){
     /* BEER */
     if(money < 30){

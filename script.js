@@ -19,7 +19,7 @@ var practiceLevel = 0;
 
 //----------------------Funkcje
 function addMoney(){
-    money = money + moneyPerClick;
+    money = money + moneyPerClick + Math.ceil(moneyBonus);
     document.getElementById("money").innerHTML = money;
 }
 
@@ -118,9 +118,9 @@ function practice(){
 }
 
 //----------------------Events
-/* SESJA +30% do nauki*/
 var date = new Date(); //data pobierana z systemu
 var month = date.getMonth() + 1; //1-sty, 2-lut, 3-mar ...
+/* SESJA */
 var learnBonus = 0;
 if(month == 2 || month == 6){ // dlaczego nie działa negacja?????
     document.getElementById("eventSesja-btn").style.display = "block";
@@ -135,7 +135,21 @@ function eventSesja(){
         learnBonus = learnAmount * 0.3;
     },1000);
 }
-
+/* WAKACJE */
+var moneyBonus = 0;
+if(month == 7 || month == 8 || month == 9){
+    document.getElementById("eventWakacje-btn").style.display = "block";
+}
+else{
+    document.getElementById("eventWakacje-btn").style.display = "none";
+}
+function eventWakacje(){
+    document.getElementById("eventWakacje-btn").className = "stdBtn-eventActive";
+    document.getElementById("wakacjeActive").innerHTML = " aktywny!";
+    window.setInterval(function(){
+        moneyBonus = moneyPerClick * 0.5;
+    },1000);
+}
 
 //----------------------Kolorowanie przycisków
 function check(){

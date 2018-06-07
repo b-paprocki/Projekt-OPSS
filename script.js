@@ -118,6 +118,7 @@ function practice(){
 }
 
 //----------------------Events
+/* SESJA +30% do nauki*/
 var date = new Date(); //data pobierana z systemu
 var month = date.getMonth() + 1; //1-sty, 2-lut, 3-mar ...
 var learnBonus = 0;
@@ -128,11 +129,13 @@ else{
     document.getElementById("eventSesja-btn").style.display = "none";
 }
 function eventSesja(){
-    document.getElementById("eventSesja-btn").className = "stdBtn-max"; // zmienić klasę
+    document.getElementById("eventSesja-btn").className = "stdBtn-eventActive";
+    document.getElementById("sesjaActive").innerHTML = " aktywny!";
     window.setInterval(function(){
         learnBonus = learnAmount * 0.3;
     },1000);
 }
+
 
 //----------------------Kolorowanie przycisków
 function check(){

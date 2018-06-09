@@ -120,6 +120,7 @@ function practice(){
 //----------------------Events
 var date = new Date(); //data pobierana z systemu
 var month = date.getMonth() + 1; //1-sty, 2-lut, 3-mar ...
+var days = date.getDate(); // dni miesiąca 1-31
 /* SESJA */
 var learnBonus = 0;
 if(month == 2 || month == 6){ // dlaczego nie działa negacja?????
@@ -150,6 +151,23 @@ function eventWakacje(){
         moneyBonus = moneyPerClick * 0.5;
     },1000);
 }
+/* JUWENALIA */
+var polotBonus = 0;
+if(month == 5 && days >= 17){
+    document.getElementById("eventJuwe-btn").style.display = "block";
+}
+else{
+    document.getElementById("eventJuwe-btn").style.display = "none";
+}
+function eventJuwe(){
+    document.getElementById("eventJuwe-btn").className = "stdBtn-eventActive";
+    document.getElementById("juweActive").innerHTML = " aktywny!";
+    window.setInterval(function(){
+        polot = polot + 100;
+        document.getElementById("polot").innerHTML = polot;
+    },180000); //=3min
+}
+
 
 //----------------------Kolorowanie przycisków
 function check(){

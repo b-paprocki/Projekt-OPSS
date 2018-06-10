@@ -268,8 +268,11 @@ window.setInterval('check()','50');
 
 //----------------------Szukanie dziewczyny
 window.setInterval(function(){
-    if(polot >= 100){
-        girl = true; //tu będzie algorytm losujący
-    } 
-},5000);
+    var random = Math.floor((Math.random()*100)+1); // 1-100
+    if(polot >= 100 && random >= 80){girl = true;}
+    if(polot >= 150 && random >= 50){girl = true;}
+    if(polot >= 300){girl = true;}
+    if(polot <= -50 && random <= 20){girl = false;}
+    if(polot <= -200){girl = false;}
+},60000); //losowanie co 1min
 

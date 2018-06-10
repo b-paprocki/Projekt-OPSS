@@ -3,6 +3,11 @@ function ready(){
     document.body.removeChild(getStarted);
 }
 
+//----------------------Nowa gra
+function newgame(){
+    location.reload();
+}
+
 //----------------------Główne zmienne
 var money = 0;
 var moneyPerSec = 0;
@@ -174,8 +179,9 @@ function eventJuwe(){
 }
 
 
-//----------------------Kolorowanie przycisków
+//----------------------Sprawdzanie warunków w czasie rzeczywistym
 function check(){
+    //----------------------Kolorowanie przycisków
     /* BEER */
     if(money < 30){
         document.getElementById("beer-btn").className = "stdBtn-disabled";
@@ -228,11 +234,27 @@ function check(){
     else{
         document.getElementById("practice-btn").className = "stdBtn";
     }
+    
+    //----------------------Niski polot, kolorowanie
+    if(polot < -200){
+        document.getElementById("polot").style.color = "red";
+        document.getElementById("polot").style.textShadow = "1px 1px black";
+        document.getElementById("polotWarning").style.display = "inline";
+    }
+    else if (polot < -50){
+        document.getElementById("polot").style.color = "gold";
+        document.getElementById("polot").style.textShadow = "1px 1px black";
+        document.getElementById("polotWarning").style.display = "none";
+    }
+    else if (polot > 100){
+        document.getElementById("polot").style.color = "#4CAF50";
+        document.getElementById("polot").style.textShadow = "1px 1px black";
+        document.getElementById("polotWarning").style.display = "none";
+    }
+    else{
+        document.getElementById("polot").style.color = "black";
+        document.getElementById("polotWarning").style.display = "none";
+    }
 }
-window.setInterval('check()','100');
+window.setInterval('check()','50');
 
-
-//----------------------Nowa gra
-function newgame(){
-    location.reload();
-}

@@ -1,3 +1,8 @@
+//----------------------Get started
+function ready(){
+    document.body.removeChild(getStarted);
+}
+
 //----------------------Główne zmienne
 var money = 0;
 var moneyPerSec = 0;
@@ -226,10 +231,6 @@ function check(){
 }
 window.setInterval('check()','100');
 
-//----------------------Informacja na start
-function getStarted(){
-    alert("Witaj w symulatorze studenta informatyki!\nW tej grze możesz wcielić się w typowego studenta. Twoim celem jest ukończenie studiów w jak najkrótszym czasie, wyprowadzenie się od rodziców i znalezienie dziewczyny. Zadanie nie będzie łatwe, bo jesteś w końcu studentem informatyki.\n\nPowodzenia!");
-}
 
 //----------------------Nowa gra
 function newgame(){

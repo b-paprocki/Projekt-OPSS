@@ -18,7 +18,7 @@
                 <div class="resource-box">Kasa:<br><span id="money">0</span> $</div>
                 <div class="resource-box">Kasy na sekundę:<br><span id="moneyPerSec">0</span> $</div>
                 <div class="resource-box">Nauka:<br><span id="sci">0</span></div>
-                <div class="resource-box">Polot:<br><span id="polot">0</span> <span id="polotWarning">ostrożnie!</span></div>
+                <div class="resource-box">Polot:<br><span id="polot">0</span> <span id="polotWarning">ostrożnie!</span><div id="haveGirl">Masz dziewczynę!</div></div>
                 <div style="clear: both;"></div>
             </div>
             <div id="game-box">
@@ -31,6 +31,8 @@
                 <button class="stdBtn" id="buyHouse-btn" onclick="buyHouse()">Kup mieszkanie<br>-1 000 000$</button>
                 <button class="stdBtn" id="practice-btn" onclick="practice()"><span id="practiceName">Idź na bezpłatne praktyki</span><br>Wymagana nauka: <span id="practiceCost">500</span><br>+<span id="practiceToMoney">1</span>$ za każdy klik</button>
                 <button class="stdBtn" id="party-btn" onclick="party()">Idź na imprezę do klubu<br>-150$<br>+15 polotu</button>
+                
+                <!--Eventy-->
                 <button class="stdBtn" id="eventSesja-btn" onclick="eventSesja()"><i>Event<span id="sesjaActive"></span></i><br><b>Sesja!</b><br>+30% do zdobywanej nauki</button>
                 <button class="stdBtn" id="eventWakacje-btn" onclick="eventWakacje()"><i>Event<span id="wakacjeActive"></span></i><br><b>Wakacje</b><br>+50% do zarabianej kasy</button>
                 <button class="stdBtn" id="eventJuwe-btn" onclick="eventJuwe()"><i>Event<span id="juweActive"></span></i><br><b>Juwenalia</b><br>+100 polotu/3min</button>

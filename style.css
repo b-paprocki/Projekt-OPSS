@@ -86,6 +86,10 @@ h1{
     float: left;
 }
 
+#haveGirl{
+    font-size: 12px;
+}
+
 /*Przyciski*/
 .stdBtn{
     background-color: #008CBA;

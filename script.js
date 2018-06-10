@@ -236,25 +236,40 @@ function check(){
     }
     
     //----------------------Niski polot, kolorowanie
-    if(polot < -200){
+    if(polot <= -200){
         document.getElementById("polot").style.color = "red";
         document.getElementById("polot").style.textShadow = "1px 1px black";
         document.getElementById("polotWarning").style.display = "inline";
     }
-    else if (polot < -50){
+    else if (polot <= -50){
         document.getElementById("polot").style.color = "gold";
         document.getElementById("polot").style.textShadow = "1px 1px black";
         document.getElementById("polotWarning").style.display = "none";
     }
-    else if (polot > 100){
+    else if (polot >= 100){
         document.getElementById("polot").style.color = "#4CAF50";
         document.getElementById("polot").style.textShadow = "1px 1px black";
         document.getElementById("polotWarning").style.display = "none";
+        
     }
     else{
         document.getElementById("polot").style.color = "black";
         document.getElementById("polotWarning").style.display = "none";
     }
+    //----------------------Wyświetlanie informacji o posiadaniu dziewczyny
+    if(girl == true){
+        document.getElementById("haveGirl").style.display = "block";
+    }
+    else{
+        document.getElementById("haveGirl").style.display = "none";
+    }
 }
 window.setInterval('check()','50');
+
+//----------------------Szukanie dziewczyny
+window.setInterval(function(){
+    if(polot >= 100){
+        girl = true; //tu będzie algorytm losujący
+    } 
+},5000);
 

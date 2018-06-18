@@ -91,7 +91,7 @@ function buyHouse(){
         money = money - 1000000;
         house = true;
         document.getElementById("money").innerHTML = money;
-        document.getElementById("buyHouse-btn").className = "stdBtn-max";
+        //document.getElementById("buyHouse-btn").className = "stdBtn-max";
     }
 }
 
@@ -121,7 +121,7 @@ function practice(){
         if (practiceLevel == 25){
             moneyPerClick = moneyPerClick + 109; // +300$ z praktyk
             document.getElementById("practice-btn").innerHTML = "Zdobywaj dośw. jako Senior Developer<br><b>MAX</b>";
-           // document.getElementById("practice-btn").className = "stdBtn-max"; przeniesiono do funkcji check()
+            document.getElementById("practice-btn").className = "stdBtn-max";
         }
         document.getElementById("moneyPerClick").innerHTML = moneyPerClick;
     }
@@ -139,7 +139,7 @@ var month = date.getMonth() + 1; //1-sty, 2-lut, 3-mar ...
 var days = date.getDate(); // dni miesiąca 1-31
 /* SESJA */
 var learnBonus = 0;
-if(month == 2 || month == 6){ // dlaczego nie działa negacja?????
+if(month == 2 || month == 6){
     document.getElementById("eventSesja-btn").style.display = "block";
 }
 else{
@@ -205,7 +205,7 @@ function check(){
     }
     /* UPGRADE MINER */
     if(money < 5000){
-        document.getElementById("miner-btn").className = "stdBtn-disabled";
+        document.getElementById("minerUpgrade-btn").className = "stdBtn-disabled";
     }
     else{
         document.getElementById("minerUpgrade-btn").className = "stdBtn";
@@ -234,7 +234,7 @@ function check(){
     if(science < practiceCost){
         document.getElementById("practice-btn").className = "stdBtn-disabled";
     }
-    else if (practiceLevel == 25){
+    else if (practiceLevel >= 25){
         document.getElementById("practice-btn").className = "stdBtn-max";
     }
     else{

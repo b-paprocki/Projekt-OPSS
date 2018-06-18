@@ -9,23 +9,23 @@ function newgame(){
 }
 
 //----------------------Główne zmienne
-var money = 0;
-var moneyPerSec = 0;
-var science = 0;
-var polot = 0;
+let money = 0;
+let moneyPerSec = 0;
+let science = 0;
+let polot = 0;
 
 //----------------------Zmienne na zwycięstwo
-var house = false;
-var girl = false;
-var studies = false;
+let house = false;
+let girl = false;
+let studies = false;
 
 //----------------------Zmienne ilości
-var learnAmount = 1;
-var haveMiner = false;
-var minerLevel = 1;
-var moneyPerClick = 1;
-var practiceCost = 500;
-var practiceLevel = 0;
+let learnAmount = 1;
+let haveMiner = false;
+let minerLevel = 1;
+let moneyPerClick = 1;
+let practiceCost = 500;
+let practiceLevel = 0;
 
 //----------------------Funkcje
 function addMoney(){
@@ -91,7 +91,6 @@ function buyHouse(){
         money = money - 1000000;
         house = true;
         document.getElementById("money").innerHTML = money;
-        //document.getElementById("buyHouse-btn").className = "stdBtn-max";
     }
 }
 
@@ -121,7 +120,7 @@ function practice(){
         if (practiceLevel == 25){
             moneyPerClick = moneyPerClick + 109; // +300$ z praktyk
             document.getElementById("practice-btn").innerHTML = "Zdobywaj dośw. jako Senior Developer<br><b>MAX</b>";
-            document.getElementById("practice-btn").className = "stdBtn-max";
+           // document.getElementById("practice-btn").className = "stdBtn-max";
         }
         document.getElementById("moneyPerClick").innerHTML = moneyPerClick;
     }
@@ -134,11 +133,11 @@ function inz(){
 }
 
 //----------------------Events
-var date = new Date(); //data pobierana z systemu
-var month = date.getMonth() + 1; //1-sty, 2-lut, 3-mar ...
-var days = date.getDate(); // dni miesiąca 1-31
+let date = new Date(); //data pobierana z systemu
+let month = date.getMonth() + 1; //1-sty, 2-lut, 3-mar ...
+let days = date.getDate(); // dni miesiąca 1-31
 /* SESJA */
-var learnBonus = 0;
+let learnBonus = 0;
 if(month == 2 || month == 6){
     document.getElementById("eventSesja-btn").style.display = "block";
 }
@@ -153,7 +152,7 @@ function eventSesja(){
     },1000);
 }
 /* WAKACJE */
-var moneyBonus = 0;
+let moneyBonus = 0;
 if(month == 7 || month == 8 || month == 9){
     document.getElementById("eventWakacje-btn").style.display = "block";
 }
@@ -168,7 +167,7 @@ function eventWakacje(){
     },1000);
 }
 /* JUWENALIA */
-var polotBonus = 0;
+let polotBonus = 0;
 if(month == 5 && days >= 17){
     document.getElementById("eventJuwe-btn").style.display = "block";
 }
@@ -296,7 +295,7 @@ window.setInterval('check()','50');
 
 //----------------------Szukanie dziewczyny
 window.setInterval(function(){
-    var random = Math.floor((Math.random()*100)+1); // 1-100
+    let random = Math.floor((Math.random()*100)+1); // 1-100
     if(polot >= 100 && random >= 80){girl = true;}
     if(polot >= 150 && random >= 50){girl = true;}
     if(polot >= 300){girl = true;}

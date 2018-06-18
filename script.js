@@ -127,6 +127,12 @@ function practice(){
     }
 }
 
+function inz(){
+    if (science >= 15000){
+        studies = true;
+    }
+}
+
 //----------------------Events
 var date = new Date(); //data pobierana z systemu
 var month = date.getMonth() + 1; //1-sty, 2-lut, 3-mar ...
@@ -235,6 +241,17 @@ function check(){
         document.getElementById("practice-btn").className = "stdBtn";
     }
     
+    /* INŻ */
+    if(science < 15000){
+        document.getElementById("inz-btn").className = "stdBtn-disabled";
+    }
+    else if(studies == true){
+        document.getElementById("inz-btn").className = "stdBtn-max";
+    }
+    else{
+        document.getElementById("inz-btn").className = "stdBtn";
+    }
+    
     //----------------------Niski polot, kolorowanie
     if(polot <= -200){
         document.getElementById("polot").style.color = "red";
@@ -263,6 +280,17 @@ function check(){
     else{
         document.getElementById("haveGirl").style.display = "none";
     }
+    //----------------------Wyświetlanie informacji o ukończonych studiach
+    if(studies == true){
+        document.getElementById("studiesEnd").style.display = "block";
+    }
+    else{
+        document.getElementById("studiesEnd").style.display = "none";
+    }
+    //----------------------Czy zwycięstwo
+    if(house == true && girl == true && studies == true){
+        alert("Wygrałeś!");
+    }
 }
 window.setInterval('check()','50');
 
@@ -275,4 +303,3 @@ window.setInterval(function(){
     if(polot <= -50 && random <= 20){girl = false;}
     if(polot <= -200){girl = false;}
 },60000); //losowanie co 1min
-
